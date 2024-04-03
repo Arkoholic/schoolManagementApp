@@ -3,8 +3,8 @@ import { StyleSheet, FlatList } from "react-native";
 import { ScreenHeight, ScreenWidth } from "../../assets/Shared/shared";
 import { colors } from "../../assets/colors";
 import { StatusBar } from "expo-status-bar";
-import { Text, View, Image } from "react-native";
-import { BigText, MediumText, RegularText, SmallText } from "../components/Texts";
+import { View, Image } from "react-native";
+import { MediumText, RegularText} from "../components/Texts";
 
 //custom components
 import MainContainer from "../../assets/Shared/MainContainer";
@@ -41,7 +41,7 @@ const Slide = ({ item }) => {
       <Image source={item.image}
         style={{ height: '55%', resizeMode: 'contain' }}
       />
-      <View style={{ marginLeft: -50}}>
+      <View style={{ marginLeft: -50,}}>
         <MediumText style={{ marginVertical: 55, fontWeight: 900, textAlign: 'center' }}>{item.title}</MediumText>
       </View>
       <View style={{ overflow: 'hidden', height: 86 }}>
@@ -70,18 +70,7 @@ const Onboarding = () => {
         </View>
     };
 
-    // const ButtonSlide = (currentSlideIndex, slides) => {
-    //   return (
-    //     currentSlideIndex == slides.length -1 ? 
-    //     <View style={{height:50}}>
-    //         <RegularButton  style={{justifyContent:'center'}}><RegularText style={[{color: white},{fontWeight:'bold'}]}>Get Started</RegularText>
-    //         </RegularButton>
-    //         </View>:
-    //         <View style={{flexDirection:'row', justifyContent:'center', alignItems:'center', alignContent:'center'}}>
-    //         <RegularButton onPress ={goNextSlide} style={{backgroundColor: primary}}>Next</RegularButton>
-    //     </View>
-    //   )
-    // };
+   
 
     const ButtonSlide = ({ currentSlideIndex, slides, goNextSlide }) => {
       return (
@@ -92,7 +81,7 @@ const Onboarding = () => {
           </RegularButton>
         </View> :
         <View style={{ flexDirection: 'row', justifyContent: 'center'  }}>
-          <RegularButton onPress={goNextSlide} style={{ backgroundColor: primary }}><RegularText style={[{ color: 'white' }, { fontWeight: 'bold' }]}>Next</RegularText></RegularButton>
+          <RegularButton onPress={goNextSlide} style={{ backgroundColor: primary }}><RegularText style={[{ color: 'white' }]}>Next</RegularText></RegularButton>
         </View>
       );
     };

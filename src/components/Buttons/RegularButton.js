@@ -21,7 +21,7 @@ width: 135px;
 const RegularButton = (props) => {
     return (
         <ButtonView onPress={props.onPress} {...props}>
-    <RegularText style={[{color: 'white'},{...props?.textStyle}]}>{props.children}</RegularText>
+    <RegularText style={[{color: 'white', fontWeight:'bold'},{...props?.textStyle}]}>{props.children}</RegularText>
         </ButtonView>
     )
 }
