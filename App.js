@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import LoginScreen from './src/screens/LoginScreen';
-import Onboarding from './src/screens/Onboarding';
+import SignUpProprietor2 from './src/screens/SignUpProprietor2';
+
 
 
 
 export default function App() {
   return (
     <>
-    <LoginScreen/>
+    <SignUpProprietor2/>
     </>
     
   );

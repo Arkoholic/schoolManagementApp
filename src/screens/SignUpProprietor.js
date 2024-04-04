@@ -15,27 +15,26 @@ import StyledTextInput from "../components/Inputs/StyledTextInput";
 const {primary, background,inputText,inputBorders, white, black} =colors;
 
 
-const LoginScreen = () => {
+const SignUpProprietor = () => {
     const [selectedOption, setSelectedOption] = useState('');
-    
-return (
-    <KeyboardAvoidingContainer>
-            <View style={{ display: 'flex', flex: 1, backgroundColor: background }}>
-                <StatusBar backgroundColor={primary} translucent={true} style="light" />
-                <View style={{ paddingVertical: 43, paddingLeft: 20, backgroundColor: primary, borderBottomRightRadius: 100 }}>
-                    <BigText style={{ textAlign: 'left', color: "white" }}>Welcome Back!</BigText>
-                </View>
-                <MainContainer style={{ marginVertical: 15 }}>
-                    <View style={{ borderWidth: 1, borderColor: inputBorders, height: 48, marginBottom: 30, marginTop: 10, borderRadius: 4, }}>
+    return (
+        <KeyboardAvoidingContainer>
+            <View>
+            <StatusBar backgroundColor={primary} translucent={true} style="light" />
+            <View style={{ paddingVertical: 43, paddingLeft: 20, backgroundColor: primary, borderBottomRightRadius: 100 }}>
+                    <BigText style={{ textAlign: 'left', color: "white" }}>Sign Up</BigText>
+            </View>
+            <MainContainer style={{ marginVertical: 10 }}>
+                    <View style={{ borderWidth: 1, borderColor: inputBorders, height: 48, marginBottom: 30, borderRadius: 4, }}>
                         <Picker
                             selectedValue={selectedOption}
                             onValueChange={(itemValue, itemIndex) => setSelectedOption(itemValue)}
                             mode="dialog"
                         >
-                            <Picker.Item label='Select a category to log in' value='' style={{ color: "red" }} />
+                            <Picker.Item label='Select a category to sign up' value='' style={{ color: "red" }} />
                             <Picker.Item label='Proprietor' value='proprietor' style={{ color: inputText, fontSize: 16 }} />
                             <Picker.Item label='Parent' value='parent' style={{ color: inputText }} />
-                            <Picker.Item label='Teacher' value='teacher' style={{ color: inputText }} />
+                            
                         </Picker>
                     </View>
 
@@ -44,12 +43,17 @@ return (
                         keyboardType={"email-address"}
                     />
                     <StyledTextInput
-                        label={"Password"}
-                        isPassword={true}
+                        label={"Fullname"}
+                        keyboardType={"default"}
+                        autoCapitalize={"words"}
                     />
-                    <RegularButton style={{ width: '100%', marginTop: 40 }}>Login</RegularButton>
+                    <StyledTextInput
+                        label={"Contact"}
+                        keyboardType={"numeric"}
+                    />
+                    <RegularButton style={{ width: '100%', marginTop: 40 }}>Next</RegularButton>
 
-                    {selectedOption === 'proprietor' || selectedOption === 'parent' ? (
+                    
                         <View>
                             <View style={{ flexDirection: 'row' }}>
                             <View style={{ width: 118, height: 1, backgroundColor: inputBorders, marginVertical: 50 }}></View>
@@ -67,16 +71,12 @@ return (
                         </View>
                         </View>
                         
-                    ) : null}
+                    
 
                 </MainContainer>
             </View>
         </KeyboardAvoidingContainer>
-    
-    
-    
-    
-)
+    )
 }
 
-export default LoginScreen;
+export default SignUpProprietor;

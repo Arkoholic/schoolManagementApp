@@ -127,6 +127,7 @@ const skipSlides = () => {
       horizontal= {true}
       showsHorizontalScrollIndicator={false}
       renderItem={({item}) => <Slide item={item}/>} 
+      scrollEnabled={false}
       
       /> 
       {/* <ButtonSlide/> */}
